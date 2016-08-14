@@ -33,9 +33,9 @@ tbApiSecret.pack(fill=X, padx=10)
 def getCategories():
 
     wcapi = API(
-        url=tbApiUrl.get(),
-        consumer_key=tbApiKey.get(),
-        consumer_secret=tbApiSecret.get()
+        url=tbApiUrl.get().strip(),
+        consumer_key=tbApiKey.get().strip(),
+        consumer_secret=tbApiSecret.get().strip()
     )
 
     wooCategories = wcapi.get("products/categories").json()
